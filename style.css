@@ -21,3 +21,4 @@ nav.pn a.next{text-align:right}nav.pn span.ph{flex:1}
 .idx li{padding:0}.idx li a{display:block;padding:.8rem .9rem;text-decoration:none;color:var(--fg)}
 .idx small{display:block;color:var(--muted)}
 footer{color:var(--muted);font-size:.85rem;margin-top:3rem}
+.summary{display:block;color:var(--muted);font-size:.93em;line-height:1.5;margin-top:.45rem}

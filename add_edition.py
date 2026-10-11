@@ -10,7 +10,8 @@ Usage:
 - Unless --no-push, commits and pushes to origin/main (GitHub Pages redeploys).
 
 Markdown subset: # title, ## sections, ### subsections, numbered and bullet lists,
-[text](url) links, **bold**, *italic*, paragraphs. In list items, a tag written as
+[text](url) links, **bold**, *italic*, paragraphs. An indented `**Summary:** ...` line
+under a list item renders as a muted summary block. In list items, a tag written as
 ", new." or ", from your X saves." / ", from your saves." becomes a badge.
 The first '# ' heading is the edition title.
 """
@@ -44,6 +45,7 @@ nav.pn a.next{text-align:right}nav.pn span.ph{flex:1}
 .idx li{padding:0}.idx li a{display:block;padding:.8rem .9rem;text-decoration:none;color:var(--fg)}
 .idx small{display:block;color:var(--muted)}
 footer{color:var(--muted);font-size:.85rem;margin-top:3rem}
+.summary{display:block;color:var(--muted);font-size:.93em;line-height:1.5;margin-top:.45rem}
 """
 
 def inline(s):
@@ -74,6 +76,11 @@ def render_md(md):
             flush_p(); kind = "ol" if m else "ul"
             if lst != kind: close_l(); out.append("<%s>" % kind); lst = kind
             out.append("<li>%s</li>" % inline(m.group(2) if m else t[2:])); continue
+        if lst and (t.startswith("  ") or t.startswith("\t")) and out and out[-1].endswith("</li>"):
+            continuation = t.strip()
+            if continuation.startswith("**Summary:**"):
+                out[-1] = out[-1][:-5] + '<span class="summary">%s</span></li>' % inline(continuation)
+                continue
         if not t.strip(): flush_p(); close_l(); continue
         close_l(); para.append(t.strip())
     flush_p(); close_l()
