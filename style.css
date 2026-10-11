@@ -22,3 +22,8 @@ nav.pn a.next{text-align:right}nav.pn span.ph{flex:1}
 .idx small{display:block;color:var(--muted)}
 footer{color:var(--muted);font-size:.85rem;margin-top:3rem}
 .summary{display:block;color:var(--muted);font-size:.93em;line-height:1.5;margin-top:.45rem}
+.resource-summary{cursor:pointer;list-style:none}
+.resource-summary::-webkit-details-marker{display:none}
+.resource-summary::after{content:"＋";float:right;color:var(--muted);font-weight:700}
+.resource-details[open]>.resource-summary::after{content:"−"}
+.resource-summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:.25rem}

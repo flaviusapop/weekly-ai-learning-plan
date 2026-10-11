@@ -11,7 +11,7 @@ Usage:
 
 Markdown subset: # title, ## sections, ### subsections, numbered and bullet lists,
 [text](url) links, **bold**, *italic*, paragraphs. An indented `**Summary:** ...` line
-under a list item renders as a muted summary block. In list items, a tag written as
+under a list item renders as a closed, native click-to-expand summary block. In list items, a tag written as
 ", new." or ", from your X saves." / ", from your saves." becomes a badge.
 The first '# ' heading is the edition title.
 """
@@ -46,6 +46,11 @@ nav.pn a.next{text-align:right}nav.pn span.ph{flex:1}
 .idx small{display:block;color:var(--muted)}
 footer{color:var(--muted);font-size:.85rem;margin-top:3rem}
 .summary{display:block;color:var(--muted);font-size:.93em;line-height:1.5;margin-top:.45rem}
+.resource-summary{cursor:pointer;list-style:none}
+.resource-summary::-webkit-details-marker{display:none}
+.resource-summary::after{content:"＋";float:right;color:var(--muted);font-weight:700}
+.resource-details[open]>.resource-summary::after{content:"−"}
+.resource-summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:.25rem}
 """
 
 def inline(s):
@@ -79,7 +84,8 @@ def render_md(md):
         if lst and (t.startswith("  ") or t.startswith("\t")) and out and out[-1].endswith("</li>"):
             continuation = t.strip()
             if continuation.startswith("**Summary:**"):
-                out[-1] = out[-1][:-5] + '<span class="summary">%s</span></li>' % inline(continuation)
+                item_html = out[-1][4:-5]
+                out[-1] = '<li><details class="resource-details"><summary class="resource-summary">%s</summary><div class="summary">%s</div></details></li>' % (item_html, inline(continuation))
                 continue
         if not t.strip(): flush_p(); close_l(); continue
         close_l(); para.append(t.strip())
