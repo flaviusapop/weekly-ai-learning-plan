@@ -55,7 +55,17 @@ def render_md(md):
             continuation = t.strip()
             if continuation.startswith("**Summary:**"):
                 item_html = out[-1][4:-5]
-                out[-1] = '<li><details class="resource-details"><summary class="resource-summary">%s</summary><div class="summary">%s</div></details></li>' % (item_html, inline(continuation))
+                summary_text = continuation[len("**Summary:**"):].strip()
+                out[-1] = ('<li><details class="resource-details">'
+                            '<summary class="resource-summary">'
+                            '<span class="resource-title">%s</span>'
+                            '<span class="disclosure-label disclosure-closed" aria-hidden="true">'
+                            '<span class="disclosure-copy">Read summary </span>+</span>'
+                            '<span class="disclosure-label disclosure-open" aria-hidden="true">'
+                            '<span class="disclosure-copy">Hide summary </span>−</span>'
+                            '</summary><div class="summary">'
+                            '<span class="summary-kicker">Extended summary</span>'
+                            '<p>%s</p></div></details></li>') % (item_html, inline(summary_text))
                 continue
         if not t.strip(): flush_p(); close_l(); continue
         close_l(); para.append(t.strip())

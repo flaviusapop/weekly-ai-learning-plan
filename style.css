@@ -275,8 +275,9 @@ ol { counter-reset: n; }
 .resource-summary {
   min-height: 4.25rem;
   padding: var(--space-2) var(--space-3);
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
   gap: 1rem;
   cursor: pointer;
   list-style: none;
@@ -284,45 +285,57 @@ ol { counter-reset: n; }
   line-height: 1.5;
 }
 
+.resource-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .resource-summary::-webkit-details-marker { display: none; }
 
-.resource-summary::after {
-  flex: 0 0 auto;
-  margin-inline-start: auto;
+.disclosure-label {
+  align-self: start;
   padding-block: .1rem;
   color: var(--accent);
-  content: "Read summary  +";
   font-size: .78rem;
   font-weight: 750;
   letter-spacing: .02em;
+  line-height: 1.5;
   white-space: nowrap;
 }
+
+.disclosure-open { display: none; }
+.resource-details[open] .disclosure-closed { display: none; }
+.resource-details[open] .disclosure-open { display: inline; }
 
 .resource-details[open] > .resource-summary {
   background: var(--accent-soft);
   border-block-end: 1px solid var(--line);
 }
 
-.resource-details[open] > .resource-summary::after {
-  content: "Hide summary  −";
-}
-
 .summary {
-  max-width: var(--measure);
   margin: 0;
   padding: var(--space-2) var(--space-3) var(--space-3);
+  background: var(--surface-soft);
   color: var(--fg);
   font-size: .98em;
   line-height: 1.72;
 }
 
-.summary strong:first-child {
+.summary-kicker {
   display: block;
-  margin-block-end: .35rem;
+  max-width: var(--measure);
+  margin-block-end: .45rem;
   color: var(--accent-strong);
   font-size: .76rem;
+  font-weight: 800;
   letter-spacing: .08em;
+  line-height: 1.4;
   text-transform: uppercase;
+}
+
+.summary p {
+  max-width: 68ch;
+  margin: 0;
 }
 
 .badge {
@@ -378,9 +391,8 @@ footer {
 
 @media (max-width: 38rem) {
   header.site { min-height: 3.5rem; }
-  .resource-summary::after { content: "+"; }
-  .resource-details[open] > .resource-summary::after { content: "−"; }
   .resource-summary { gap: .65rem; }
+  .disclosure-copy { display: none; }
   nav.pn { grid-template-columns: 1fr; }
   nav.pn a.next { align-items: flex-start; text-align: start; }
 }
