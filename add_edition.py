@@ -56,7 +56,7 @@ footer{color:var(--muted);font-size:.85rem;margin-top:3rem}
 def inline(s):
     s = html.escape(s, quote=False)
     s = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)",
-               lambda m: '<a href="%s" rel="noopener">%s</a>' % (m.group(2).replace('"', "%22"), m.group(1)), s)
+               lambda m: '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (m.group(2).replace('"', "%22"), m.group(1)), s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
     s = re.sub(r"(?<![\w*])\*([^*\s][^*]*)\*(?![\w*])", r"<em>\1</em>", s)
     s = re.sub(r", new\.", ' <span class="badge new">new</span>.', s)
