@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly AI learning plan for Oct 25–31, about 10 hours – Weekly AI learning plan</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css">
+</head><body>
+<header class="site"><a href="../index.html">Weekly AI learning plan</a><a href="../index.html">Archive</a></header>
+<main>
+<p class="muted" style="color:var(--muted);margin:0">Edition of Sun, Oct 25, 2026</p>
+<h1>Weekly AI learning plan for Oct 25–31, about 10 hours</h1>
+<p>I based the taste check on your recent X bookmarks: agent harnesses, skills and how to test them, evals and LLM judges, agents proving their own work, Grok Bot setups, and one note on running A/B tests properly. I couldn't check your Substack saves this run, so they didn't shape this week. Everything below is long-form from roughly the last three weeks, except one trading interview from late September that was too good to skip. I left out the tool launches and "one prompt does everything" threads from your bookmarks.</p>
+<h2>Must Watch (3)</h2>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=q4WC4TowkBo" target="_blank" rel="noopener noreferrer">Teach Your Agent to Prove It's Done</a>, Nick Nisi and Zack Proser (WorkOS) on the AI Engineer channel, about 1h 1m <span class="badge new">new</span>. A hands-on workshop on making agents prove a task is finished with deterministic checks and saved evidence, not screenshots or claims.</li>
+<li><a href="https://agentsandengineers.com/episodes/0021-design-docs-nightly-audits-and-vycari-s-agent-development-loop/" target="_blank" rel="noopener noreferrer">Design Docs, Nightly Audits, and Vycari's Agent Development Loop</a>, Allen Hutchison (ex-Google DeepMind, Gemini CLI) on Agents and Engineers, about 1h 8m <span class="badge new">new</span>. Two founders, 1,000+ PRs in a month: planning docs in the repo, nightly audits, a reflection agent, and the human still merging.</li>
+<li><a href="https://www.forwarddeployed.com/p/forward-deployed-episode-12-the-job" target="_blank" rel="noopener noreferrer">Forward Deployed, Episode 12: The Job Has Always Been Outcomes</a>, Jesse Vincent (Superpowers) with Noah Brier, about 56m <span class="badge new">new</span>. The person behind the Superpowers skills process on clarifying intent, fresh implementers, independent review and AI colleagues with lasting roles.</li>
+</ol>
+<h2>1) AI agents and workflows (about 3.5h more)</h2>
+<ul>
+<li><a href="https://t3.gg/blog/post/what-is-a-harness" target="_blank" rel="noopener noreferrer">What is a "harness"?</a>, Theo (t3.gg), about 6m read <span class="badge saves">from your saves</span>. A plain definition of what a harness is and isn't, worth reading before the Jediah Katz talk.</li>
+<li><a href="https://www.youtube.com/watch?v=7Y4sbZgBdnc" target="_blank" rel="noopener noreferrer">Is the Agent Harness Dead?</a>, Jediah Katz (SpaceXAI) on the AI Engineer channel, about 18m <span class="badge new">new</span>. What is left for the harness to do as models absorb more of it. He works on the company behind Grok Bot, so it is relevant to your own setup, but expect some home-team view.</li>
+<li><a href="https://hamel.dev/blog/posts/decision-model-evals/" target="_blank" rel="noopener noreferrer">How To Use Decision Models for Evals</a>, Hamel Husain and Antaripa Saha, about 15m read <span class="badge saves">from your saves</span>. Six cheap decision models tested as eval judges, with the practical lesson to tune the threshold and check calibration.</li>
+<li><a href="https://betterthanvibes.transistor.fm/episodes/continuous-deployment-agents-and-workflows-with-bryan-finster" target="_blank" rel="noopener noreferrer">Continuous Deployment, Agents, and Workflows with Bryan Finster</a>, Better Than Vibes, about 53m <span class="badge new">new</span>. A continuous delivery veteran on small batches, spec-driven work and an agent "scrum team" with adversarial reviewers.</li>
+<li><a href="https://www.youtube.com/watch?v=SHMCGrNJJGc" target="_blank" rel="noopener noreferrer">How to Know If Your AI Agent Is Any Good: Evals With Phoenix &amp; Claude</a>, Laurie Voss on the AI Engineer channel, about 1h 56m <span class="badge new">new</span>. A full workshop from traces to human-calibrated judges. He works at Arize and uses its open-source Phoenix tool, but the method carries over to any setup.</li>
+</ul>
+<h2>2) Investing and trading with AI (about 1.7h)</h2>
+<p>Still the thinnest topic. I found nothing credible and long-form on AI for discretionary order flow or ES scalping, and skipped the "24/7 Claude trading bot" videos.</p>
+<ul>
+<li><a href="https://theblushingquants.podbean.com/e/joseph-chen-building-ai-powered-backtesting-and-trading-systems-blushing-quants-41/" target="_blank" rel="noopener noreferrer">Joseph Chen: Building AI-Powered Backtesting and Trading Systems</a>, The Blushing Quants Podcast #41, about 1h 16m, new (Sep 23). Why AI should work inside a modular, audited backtest framework, how faster iteration speeds up overfitting, and keeping logic identical from backtest to live, futures included.</li>
+<li><a href="https://samaya.ai/blog/frontier-ai-models-outperform-human-experts-on-earnings-prediction" target="_blank" rel="noopener noreferrer">Frontier AI models outperform human experts on earnings prediction for the first time</a>, Samaya, about 15m read <span class="badge new">new</span>. A careful test across 456 companies against a bias-corrected analyst consensus, and why point-in-time data mattered. Samaya sells to finance teams, so read it as research with a stake.</li>
+<li><a href="https://dev.to/hawkbtcommander/i-let-claude-code-search-for-a-trading-strategy-but-hid-the-last-two-years-of-data-from-it-48ee" target="_blank" rel="noopener noreferrer">I let Claude Code search for a trading strategy, but hid the last two years of data from it</a>, Tomozo, about 10m read <span class="badge new">new</span>. A small, honest experiment with a hidden holdout and deflated Sharpe ratios; the agent stopped searching early because more tries would only add selection bias. The author builds the backtester used, but the setup is easy to copy.</li>
+</ul>
+<h2>3) Product and building with AI (about 2.2h)</h2>
+<ul>
+<li><a href="https://productengineers.com/episodes/season2/why-ai-makes-empowered-engineers-more-important-than-ever-marty-cagan-svpg-founder/" target="_blank" rel="noopener noreferrer">Why AI Makes Empowered Engineers More Important Than Ever</a>, Marty Cagan on The Product Engineers Podcast, about 53m <span class="badge new">new</span>. Why speeding up a feature factory with AI just ships failed products faster, and how to keep discovery in the loop.</li>
+<li><a href="https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on" target="_blank" rel="noopener noreferrer">Inside the black box of AI: How AI models actually think</a>, Emmanuel Ameisen (Anthropic) on Lenny's Podcast, about 1h 12m <span class="badge new">new</span>. How models plan ahead and form concepts, useful intuition for writing better prompts and specs.</li>
+<li><a href="https://dev.to/dailycontext/ab-testing-ai-products-is-weird-576h" target="_blank" rel="noopener noreferrer">A/B testing AI products is weird</a>, Supriya Subudhi, about 5m read <span class="badge new">new</span>. Lessons from Bumble's AI photo feedback: a winning test still needs output sampling, cost per use, model choice and per-country rules before you ship.</li>
+</ul>
+<h2>Suggested order</h2>
+<ul>
+<li><strong>Sun:</strong> Must Watch #1 (WorkOS), then Theo's harness post and the Jediah Katz talk.</li>
+<li><strong>Mon:</strong> Must Watch #2 (Vycari) and Hamel's decision-model evals post.</li>
+<li><strong>Tue:</strong> Must Watch #3 (Jesse Vincent) and the A/B testing article.</li>
+<li><strong>Wed:</strong> Joseph Chen on Blushing Quants and the hidden-holdout experiment.</li>
+<li><strong>Thu:</strong> Marty Cagan and the Samaya earnings study.</li>
+<li><strong>Fri:</strong> Bryan Finster and Emmanuel Ameisen on Lenny's Podcast.</li>
+<li><strong>Sat:</strong> The Laurie Voss evals workshop.</li>
+</ul>
+<p>The total is about 10.4 hours. Tell me if you want next week heavier on markets or lighter on agent deep dives.</p>
+<nav class="pn"><a class="prev" href="2026-10-18.html">&larr; Previous<br><small>Sun, Oct 18, 2026</small></a><span class="ph"></span></nav>
+<footer>Static page, no trackers.</footer>
+</main></body></html>
