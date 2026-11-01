@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly AI learning plan for Nov 1–7, about 10 hours – Weekly AI learning plan</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css">
+</head><body>
+<header class="site"><a href="../index.html">Weekly AI learning plan</a><a href="../index.html">Archive</a></header>
+<main>
+<p class="muted" style="color:var(--muted);margin:0">Edition of Sun, Nov 1, 2026</p>
+<h1>Weekly AI learning plan for Nov 1–7, about 10 hours</h1>
+<p>I based the taste check on your X bookmarks from Oct 21–30 (harnesses, software-factory loops, evals, shared context between agents, Grok Bot agent teams). Your Substack saves had not reached me when I wrote this, so Substack status is pending/not read. Everything below is new long-form from roughly Oct 13 – Oct 31. Several picks come from the AI Engineer NYC conference (Oct 13–14), which had a finance track; those links go to the talk page, which has the write-up and a "Watch" link that opens the livestream at the right minute. Every link was checked and loads.</p>
+<h2>Must Watch (3)</h2>
+<ol>
+<li><a href="https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside" target="_blank" rel="noopener noreferrer">Uber's AI infra, from the inside</a>, Uday Kiran Medisetty (Uber Distinguished Engineer) on The Pragmatic Engineer, about 1h 34m <span class="badge new">new</span>. The most complete tour this month of how a large company really runs agents: one model gateway, a wrapper that moves skills and settings between Claude Code, Codex and OpenCode, spend tiers, PRs tagged by type, and an honest account of code review becoming the bottleneck.</li>
+<li><a href="https://agentsandengineers.com/episodes/0022-the-ai-sandwich-agent-primitives-and-designing-with-ai/" target="_blank" rel="noopener noreferrer">The AI Sandwich, Agent Primitives, and Designing with AI</a>, Trevin Chow on Agents and Engineers ep 22, about 1h 14m <span class="badge new">new</span>. A product leader with 25 years in the job who now maintains the Compound Engineering plugin: humans define the work and polish the result, agents do the middle, and cross-model review plus shared context between agents (his Energon project) fill the gaps.</li>
+<li><a href="https://www.youtube.com/watch?v=aGIUg8zKI8A" target="_blank" rel="noopener noreferrer">How a Trading Firm Ships New AI Models the Same Day</a>, Noyan Tokgozoglu (Optiver) on the AI Engineer channel, about 23m <span class="badge new">new</span>. A market maker's AI platform: golden sets from trading teams to test every new model, an inference gateway with budgets, a harness-neutral "meta harness", and how they got spend back under control.</li>
+</ol>
+<h2>1) AI agents and workflows (about 3h)</h2>
+<ul>
+<li><a href="https://codeisnolongerwritten.com/writing/how-i-build-with-ai-2026-10" target="_blank" rel="noopener noreferrer">How I Build with AI Coding Agents: What Changed in Eight Months</a>, Victor Martin Garcia, about 15m read <span class="badge new">new</span>. A solo builder moved from approving plans to agreeing on a goal and letting the harness check the work, with agents fixing production errors from Sentry on their own; about 600 commits and 170 deploys in 30 days, and his own attention is now the limit.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/two-sigma" target="_blank" rel="noopener noreferrer">Balancing Acceleration and Safety for AI Agents</a>, John Feminella (Two Sigma) at AI Engineer NYC, about 19m <span class="badge new">new</span>. A catastrophic payment mistake used to explain five controls that make agents visible, limit their access and save human attention for the decisions that need it.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/coinbase" target="_blank" rel="noopener noreferrer">Trusting Agents in Policy-Driven Workflows</a>, Evan Kormos (Coinbase) at AI Engineer NYC, about 17m <span class="badge new">new</span>. Fixed approval stages with agents iterating inside each stage, and supervision reduced only when measured confidence supports it; close to what a regulated filing workflow needs.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/basis" target="_blank" rel="noopener noreferrer">Process Supervision for Agents That Do Long-Horizon Work</a>, Mitchell Troyanovsky (Basis) at AI Engineer NYC, about 19m <span class="badge new">new</span>. Behaviour specs, trajectory forks and cheap simulations to debug agents that run for hours; the example is an accounting agent that must explain a discrepancy instead of booking an entry to hide it.</li>
+<li><a href="https://latent.space/p/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands/" target="_blank" rel="noopener noreferrer">How Anthropic ships the #1 LLM in the World safely: Separating the Brain from the Hands</a>, Katelyn Lesse and Angela Jiang (Anthropic) on Latent Space, about 1h 47m <span class="badge new">new</span>. Anthropic staff talking about their own platform, so take the product parts lightly; the useful parts are managed agents, memory, evaluating agents and keeping credentials out of the sandbox. The first 4 minutes are a recorded intro about Anthropic's S-1 and can be skipped.</li>
+</ul>
+<h2>2) Investing and trading with AI (about 2.2h)</h2>
+<p>Nothing new this week on order flow or futures scalping specifically (no new Blushing Quants episodes since Sep 23), so these four are the best of the rest.</p>
+<ul>
+<li><a href="https://www.toptradersunplugged.com/podcast/why-trend-following-might-outlast-the-ai-arms-race-ft-mark-rzepczynski/" target="_blank" rel="noopener noreferrer">Why Trend Following Might Outlast the AI Arms Race</a>, Mark Rzepczynski on Top Traders Unplugged (Systematic Investor 423), about 1h 13m <span class="badge new">new</span>. Mostly macro (bond yields, safe havens, commodity shortages); the last 10 minutes argue that similar ML models are crowding trades and shortening how long an edge lasts. If time is short, play only from 1:02:12.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/coatue" target="_blank" rel="noopener noreferrer">A Hedge Fund as a Function</a>, Frank Long (Coatue) at AI Engineer NYC, about 14m <span class="badge new">new</span>. Models a fund as a function from context to selection, size and timing, then splits it into the parts code, models and people each do best; a clean frame for your own trade-review tooling.</li>
+<li><a href="https://latent.space/p/arca/" target="_blank" rel="noopener noreferrer">Agents Prompt People: Using Agents for Long-Horizon Financial Work</a>, Aman Singh (Arca) on Latent Space, about 26m <span class="badge new">new</span>. A wealth manager where agents do the background work over days but trades and money movement stay with humans behind fully deterministic guardrails; good on memory per client and a meta-agent that turns advisor feedback into harness changes.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/bridgewater" target="_blank" rel="noopener noreferrer">Vault: Making Unstructured Data Work for Investing</a>, Aaron Linsky and Sam Green (Bridgewater) at AI Engineer NYC, about 16m <span class="badge new">new</span>. How Bridgewater gives investment agents the research an investor would read and a memory of what the firm learns, in one research loop.</li>
+</ul>
+<h2>3) Product and building with AI (about 1.7h)</h2>
+<ul>
+<li><a href="https://latent.space/p/tenex/" target="_blank" rel="noopener noreferrer">AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC</a>, Alex Lieberman and CJ Hess on Latent Space, about 44m <span class="badge new">new</span>. Plans, decisions and agent logs checked into the repo next to the code (their "MetaHarness"), why most enterprises still have no agent in production outside engineering, and "you can't automate a process that does not exist".</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/capital-one" target="_blank" rel="noopener noreferrer">Does Code Quality Even Matter?</a>, Max Kanat-Alexander (Capital One) at AI Engineer NYC, about 16m <span class="badge new">new</span>. Cheap code makes some programs disposable; for systems people keep changing, AI should make engineering rigor cheaper too.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/jellyfish" target="_blank" rel="noopener noreferrer">Tokens Are the Cheap Part</a>, Steve Jamison (Jellyfish) at AI Engineer NYC, about 17m <span class="badge new">new</span>. Adds salary and token spend to get the cost of a merged PR, then checks whether apparent gains hide smaller changes or worse quality; useful numbers for a PO arguing about AI ROI.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/railway" target="_blank" rel="noopener noreferrer">Please… Enough with the Sloppy, One-Shot SaaS Replacements</a>, Mahmoud Abdelwahab (Railway) at AI Engineer NYC, about 13m <span class="badge new">new</span>. The product details, reusable patterns and verification loop that made agent-built internal tools pleasant to use rather than merely working.</li>
+<li><a href="https://simonwillison.net/2026/oct/28/vibe-game-development/" target="_blank" rel="noopener noreferrer">The October inflection point for vibe game development</a>, Simon Willison, about 12m read <span class="badge new">new</span>. Four browser games built with very little input, with prompts and transcripts; a light read on what "make it a LOT more fun" now does and where taste still matters.</li>
+</ul>
+<h2>Suggested order</h2>
+<ul>
+<li><strong>Sun:</strong> Must Watch #3 (Optiver) and the Coatue talk.</li>
+<li><strong>Mon:</strong> Must Watch #1 (Uber), first half.</li>
+<li><strong>Tue:</strong> Uber, second half, and the Victor Martin Garcia article.</li>
+<li><strong>Wed:</strong> Must Watch #2 (Trevin Chow) and the Simon Willison post.</li>
+<li><strong>Thu:</strong> Two Sigma, Coinbase and Basis talks, then Arca.</li>
+<li><strong>Fri:</strong> Tenex, Capital One, Jellyfish and Railway.</li>
+<li><strong>Sat:</strong> Top Traders Unplugged and the Bridgewater talk; Anthropic's Latent Space episode if you still have time.</li>
+</ul>
+<p>Total: about 10 hours.</p>
+<nav class="pn"><a class="prev" href="2026-10-25.html">&larr; Previous<br><small>Sun, Oct 25, 2026</small></a><span class="ph"></span></nav>
+<footer>Static page, no trackers.</footer>
+</main></body></html>
