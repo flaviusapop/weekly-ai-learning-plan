@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly AI learning plan for Nov 8–14, about 8 hours – Weekly AI learning plan</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css">
+</head><body>
+<header class="site"><a href="../index.html">Weekly AI learning plan</a><a href="../index.html">Archive</a></header>
+<main>
+<p class="muted" style="color:var(--muted);margin:0">Edition of Sun, Nov 8, 2026</p>
+<h1>Weekly AI learning plan for Nov 8–14, about 8 hours</h1>
+<p>I based the taste check on your X bookmarks from Oct 19–Nov 7 (evals, agent harnesses, software-factory self-improvement and benchmarking loops, shared memory between agents, shipping with agents, and Grok Bot orchestration). Substack saves were not read this run. The search window is roughly Oct 18 – Nov 8, with a preference for items after Oct 31 because last week's plan already covered mid-to-late October well. A few unused late-October pieces are included where they were strong and still unused. Every link was checked and loads.</p>
+<p>This week had fewer new short conference talks than last week's AI Engineer NYC set, so the plan is about 8 hours rather than padded.</p>
+<h2>Must Watch (3)</h2>
+<ol>
+<li><a href="https://www.lennysnewsletter.com/p/how-figmas-pms-actually-use-ai-every" target="_blank" rel="noopener noreferrer">How Figma’s PMs actually use AI every day</a>, Ezra Mechaber (growth PM, Figma) on How I AI, about 42m <span class="badge new">new</span>. A shared “PM OS” repo of 31 skills used by 60-plus PMs, Codex bug-bashing, and AutoXP, an agent that runs a growth experiment with one human checkpoint — the closest match this week to how you run agent teams as a product owner.</li>
+<li><a href="https://www.youtube.com/watch?v=LL0YmIyBKSU" target="_blank" rel="noopener noreferrer">The 2026 Software Factory Infra Stack</a>, Zach Lloyd (Warp) on Latent Space, about 35m <span class="badge new">new</span>. This is a new episode, not the earlier Warp “2,000 PRs” talk: he defines a factory in code (repos, MCPs, skills, workflows), then shows traces, scorers, self-improvement PRs against the factory itself, and benchmarks that compare models and harnesses on your own runs. Warp’s product is on screen, so take those parts lightly; the useful part is the closed loop (observe, measure, tune) and how they cut cost per PR while throughput went up and revert rate did not.</li>
+<li><a href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_blank" rel="noopener noreferrer">Building Legal Agents When You Can't See the Data</a>, Jacob Lauritzen (CTO, Legora) on Latent Space, about 1h 7m <span class="badge new">new</span>. How do you evaluate an agent when you cannot read its traces? Simulated customer “worlds,” paraphrased traces clustered into 10 or 20 failure types, and a citation check that jumped from 70% to 99% after a model release they did not change — close to the evals problem your bookmarks kept returning to.</li>
+</ol>
+<h2>1) AI agents and workflows (about 1.9h)</h2>
+<ul>
+<li><a href="https://agentsandengineers.com/episodes/0023-from-python-core-to-personal-apps-working-with-ai-agents/" target="_blank" rel="noopener noreferrer">From Python Core to Personal Apps: Working with AI Agents</a>, Mariatta Wijaya on Agents and Engineers ep 23, about 1h 3m <span class="badge new">new</span>. A Python core developer who now reviews as product owner and tester: iterate a Markdown plan before building, keep handoff docs of decisions and abandoned approaches, and turn repeated agent mistakes into skills. She also publishes those skills as pages people can read, not only as agent files.</li>
+<li><a href="https://www.youtube.com/watch?v=pz74r-4dGfQ" target="_blank" rel="noopener noreferrer">Your AI Agent Is Hiding Its Mistakes From You</a>, Ben Holmes (Warp) at AI Engineer, about 19m <span class="badge new">new</span>. Agents work around broken instructions without saying so (in his example, probing ports for extra minutes). The fix is a shared trace with tool calls and outputs, rubric scorers, and a scheduled agent that groups failures and opens reviewable PRs against skills. This is the factory loop your late-October bookmarks were pointing at.</li>
+<li><a href="https://hamel.dev/blog/posts/decision-model-evals/" target="_blank" rel="noopener noreferrer">How To Use Decision Models for Evals</a>, Hamel Husain and Antaripa Saha, about 15m read <span class="badge saves">from your saves</span>. They compare decision models as cheap judges on labeled agent traces and show why the default 0.50 threshold can hide a model that would work if you tuned it; also how to set precision/recall floors and check whether scores can be trusted as confidence.</li>
+<li><a href="https://www.youtube.com/watch?v=vhPCo-8K78U" target="_blank" rel="noopener noreferrer">What 90,000 Rollouts Reveal About AI Agents Doing Science</a>, Ian Quigley (Leash Bio) on Latent Space, about 17m <span class="badge new">new</span>. The domain is medicinal chemistry, not your day job; the useful part is an eval with a fixed budget where they can see not only whether the agent finished, but which failure modes it chose (giving up early, retesting the same option, staying in a bad neighborhood). Stronger models abandoned unproductive search faster.</li>
+</ul>
+<h2>2) Investing and trading with AI (about 2.8h)</h2>
+<p>Nothing new this week on order flow or futures scalping specifically (still no new Blushing Quants episodes since Sep 23), so these three are the best of the rest. The first two are founder interviews; take the product parts lightly. The third is OpenAI staff talking about their finance product, so take those parts lightly too.</p>
+<ul>
+<li><a href="https://www.fundamentedge.com/invest-with-ai-1/invest-with-ai-episodes/13" target="_blank" rel="noopener noreferrer">How a Network of Agents Can Run a Hedge Fund</a>, Robert Yang (Fundamental Research Labs) on Invest with AI, about 1h 16m <span class="badge new">new</span>. After managing 50 agent threads across seven monitors, he wants one agent that coordinates the rest, plus internal benchmarks that made their Excel agent accurate enough for buy-side analysts. The later stretch covers teaching an agent to hold an investment view instead of agreeing with the last prompt. The host is joining FRL, and the first half hour is biography; if time is short, start around 26:58 (Excel agents) or 45:51 (managing many threads).</li>
+<li><a href="https://www.fundamentedge.com/invest-with-ai-1/invest-with-ai-episodes/12/qualitate" target="_blank" rel="noopener noreferrer">Can AI Replace Traditional Expert Networks? The Future of Primary Research with Qualitate</a>, Sagar Kadakia on Invest with AI, about 1h 4m <span class="badge new">new</span>. How AI interviewers can run recurring channel checks with memory of prior calls, what happens to alpha when that research gets cheaper, and the compliance questions (MNPI review, expert fraud, AI-generated answers). Oct 30, unused last week.</li>
+<li><a href="https://www.youtube.com/watch?v=v-d1WTqIULs" target="_blank" rel="noopener noreferrer">Building ChatGPT for Finance</a>, Joseph Kim (OpenAI, head of ChatGPT for Financial Services) on Latent Space, about 28m <span class="badge new">new</span>. The usefulness threshold (when an agent actually saves an analyst time), why every number needs a trail you can check, and what the user should still control, review or approve — including his claim that idea generation and trading become plausible agent work by 2027.</li>
+</ul>
+<h2>3) Product and building with AI (about 1h)</h2>
+<p>This section is thinner than last week. The pieces below measure shipping or cost rather than announce a tool.</p>
+<ul>
+<li><a href="https://newsletter.pragmaticengineer.com/p/how-software-engineering-is-changing" target="_blank" rel="noopener noreferrer">How software engineering is changing: a tale of two eras</a>, Neil Kakkar on The Pragmatic Engineer, about 26m read <span class="badge new">new</span>. Personal data from PostHog vs an AI-native startup: about 11x more PRs, optional human review once a review agent is in CI, lost shared context when nobody reads colleagues’ diffs, and the guardrails he added so agents running overnight did not eat the rest of his life.</li>
+<li><a href="https://newsletter.pragmaticengineer.com/p/whats-the-roi-of-software-engineers" target="_blank" rel="noopener noreferrer">What’s the ROI of software engineers’ spending on AI?</a>, Gergely Orosz on The Pragmatic Engineer, about 20m read <span class="badge new">new</span>. Spend and PR-throughput notes from 27 companies, including a quant shop where traders — not engineers — are the biggest Claude users and AI cost is judged by desk P&amp;L. Useful numbers if you are arguing about agent spend. Oct 20, unused last week.</li>
+<li><a href="https://ai.engineer/nyc/2026/talks/revolut" target="_blank" rel="noopener noreferrer">Shipping like a startup, regulated like a bank</a>, David Abitbol (Revolut) at AI Engineer NYC, about 12m <span class="badge new">new</span>. Unused from that conference: self-hosted GLM as the default for about 2,000 engineers cut coding inference cost to about a tenth, with reported 60% better coding time and 70% better lead time once tokens were cheap enough for debugging and tickets. He calls a 1M context window a scam (256k was enough) and aims for under 3 seconds to first token; sandbox rules, not later review, are what make it acceptable to a bank.</li>
+</ul>
+<h2>Suggested order</h2>
+<ul>
+<li><strong>Sun:</strong> Must Watch #2 (Zach Lloyd) and the Ben Holmes talk.</li>
+<li><strong>Mon:</strong> Must Watch #1 (Figma PM OS).</li>
+<li><strong>Tue:</strong> Must Watch #3 (Legora evals).</li>
+<li><strong>Wed:</strong> Mariatta Wijaya and the Hamel evals post.</li>
+<li><strong>Thu:</strong> Robert Yang; if time is short, start at 26:58.</li>
+<li><strong>Fri:</strong> Neil Kakkar, the ROI article, the Revolut talk, and the Leash Bio evals talk.</li>
+<li><strong>Sat:</strong> The Qualitate / expert-networks episode and Joseph Kim.</li>
+</ul>
+<p>Total: about 8 hours.</p>
+<nav class="pn"><a class="prev" href="2026-11-01.html">&larr; Previous<br><small>Sun, Nov 1, 2026</small></a><span class="ph"></span></nav>
+<footer>Static page, no trackers.</footer>
+</main></body></html>
